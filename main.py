@@ -1,30 +1,26 @@
 
 class Node():
     def __init__(self, value):
+        print('called init function')
         self.value = value
-        self.next = self
+        self.next = None
 
     def __str__(self):
         #print(self.value)
         return str(self.value)
 
-test = Node('aoiseufa')
-print(test.value)
+    def next_node (self, node):
+        self.next = node
 
-nodes = []
-# for i in range(10):
-#     n = Node(i)
-#     nodes.append(n)
-# print(nodes)
+n1 = Node('a')
+n2 = Node('b')
+n3 = Node('c')
+n1.next_node(n2)
+n2.next_node(n3)
+n3.next_node(None)
 
-# for n in nodes:
-#     print(n)
+current_node = n1
 
-
-n1 = Node(1)
-n2 = Node(2)
-n3 = Node(3)
-list = [n1, n2, n3]
-
-print(n1, n2, n3)
-print(n1.next)
+while True:
+    print(current_node)
+    current_node = current_node.next
