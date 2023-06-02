@@ -17,10 +17,27 @@ n2 = Node('b')
 n3 = Node('c')
 n1.next_node(n2)
 n2.next_node(n3)
-n3.next_node(None)
 
 current_node = n1
 
-while True:
-    print(current_node)
-    current_node = current_node.next
+def print_all(head):
+    while True:
+        print(head)
+        if head.next == None:
+            break
+        head = head.next
+
+print_all(current_node)
+
+def append(head, node):
+    current = head 
+    while True: 
+        if current.next == None:
+            break 
+        current = current.next
+
+    current.next = node
+
+n4 = Node('d')
+n4 = append(current_node, n4)
+print_all(current_node)
